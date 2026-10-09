@@ -20,11 +20,10 @@ export const site = {
     alt: "Indus Best Mega Food Park",
   },
   phones: [
-    { label: "CEO", number: "+91 81960 11116", href: "tel:+918196011116" },
     {
-      label: "Project Manager",
-      number: "+91 85954 11612",
-      href: "tel:+918595411612",
+      label: "Contact us",
+      number: "+91 76106 61111",
+      href: "tel:+917610661111",
     },
   ],
   emails: [

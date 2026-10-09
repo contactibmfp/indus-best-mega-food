@@ -13,8 +13,8 @@ export function LandingNavSheet({
   open,
   onOpenChange,
   pathname,
-  enquireHref = "/contact",
-  enquireLabel = "Enquire now",
+  enquireHref = "tel:+917610661111",
+  enquireLabel = "Contact us · 76106 61111",
 }: {
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -53,24 +53,15 @@ export function LandingNavSheet({
           })}
         </nav>
         <div className="mt-auto space-y-4 px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-          <Button variant="cta" className="h-12 w-full touch-manipulation text-base" asChild>
+          <Button
+            variant="cta"
+            className="h-12 w-full touch-manipulation text-base"
+            asChild
+          >
             <a href={enquireHref} onClick={() => onOpenChange(false)}>
               {enquireLabel}
             </a>
           </Button>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            {site.phones.map((phone) => (
-              <p key={phone.href}>
-                {phone.label}:{" "}
-                <a
-                  className="inline-flex min-h-11 items-center font-medium text-foreground underline-offset-2 hover:underline"
-                  href={phone.href}
-                >
-                  {phone.number}
-                </a>
-              </p>
-            ))}
-          </div>
         </div>
       </SheetContent>
     </Sheet>

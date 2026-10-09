@@ -39,7 +39,7 @@ function BrandMark({
     >
       <span
         className={cn(
-          "min-w-0 font-heading text-[13px] font-semibold leading-[1.15] transition-colors duration-300 sm:text-sm lg:text-[15px]",
+          "min-w-0 font-heading text-[13px] leading-[1.15] font-semibold transition-colors duration-300 sm:text-sm lg:text-[15px]",
           tone === "forest" ? "text-forest-foreground" : "text-foreground"
         )}
       >
@@ -129,7 +129,7 @@ function NavLink({
         aria-current={active ? "page" : undefined}
         data-state={active ? "current" : "idle"}
         className={cn(
-          "flex min-h-12 items-center rounded-lg px-3 py-3 text-sm font-medium transition-colors outline-none touch-target",
+          "flex touch-target min-h-12 items-center rounded-lg px-3 py-3 text-sm font-medium transition-colors outline-none",
           "focus-visible:ring-3 focus-visible:ring-ring/50",
           active
             ? "bg-primary/10 text-primary hover:bg-primary/15 focus-visible:bg-primary/15"
@@ -149,7 +149,7 @@ function NavLink({
       aria-current={active ? "page" : undefined}
       data-state={active ? "current" : "idle"}
       className={cn(
-        "inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium touch-target",
+        "inline-flex touch-target min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium",
         "transition-colors duration-300 outline-none",
         forest
           ? "focus-visible:ring-3 focus-visible:ring-forest-foreground/30"
@@ -263,25 +263,14 @@ export function SiteHeader() {
               </nav>
               <div className="mt-auto space-y-4 px-4 pb-6">
                 <Button variant="cta" className="h-11 w-full" asChild>
-                  <a href="/contact" onClick={() => setOpen(false)}>
-                    Enquire now
+                  <a href="tel:+917610661111" onClick={() => setOpen(false)}>
+                    Contact us · 76106 61111
                   </a>
                 </Button>
                 <div className="space-y-1 text-xs text-muted-foreground">
-                  {site.phones.map((phone) => (
-                    <p key={phone.href}>
-                      {phone.label}:{" "}
-                      <a
-                        className="inline-flex min-h-11 items-center font-medium text-foreground underline-offset-2 hover:underline active:text-primary touch-target"
-                        href={phone.href}
-                      >
-                        {phone.number}
-                      </a>
-                    </p>
-                  ))}
                   <p>
                     <a
-                      className="inline-flex min-h-11 items-center font-medium text-foreground underline-offset-2 hover:underline active:text-primary touch-target"
+                      className="inline-flex touch-target min-h-11 items-center font-medium text-foreground underline-offset-2 hover:underline active:text-primary"
                       href={site.emails[0].href}
                     >
                       {site.emails[0].address}
